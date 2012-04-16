@@ -1,0 +1,142 @@
+<h1>H2MDK 12-30W Inventor Kit</h1>
+<h2>User Guide</h2>
+<h2>Version 1.0 16/4/2012</h2>
+
+<hr>
+
+<h3>System Overview<h3>
+
+<p>The H2MDK30 kit enables the user to easily design and build fuel cell systems using a Horizon H-12 or H-30 PEM fuel cell stacks to deliver 12W or 30W respectively.</p>
+
+<p>An open source platform supported by an online developer forum encourages rapid customisation of systems, control and user interface for a wide range of applications from model trains, planes and automobiles, to remote monitoring systems. 
+</p>
+                                                                   
+<hr>
+
+<h3>Features</h3>
+
+<ul>
+<li>Control system for Horizon fuel cell stack</li>
+<li>Refillable metal hydride hydrogen storage with pressure regulators. </li>
+<li>Complete component kit to build and create your own hydrogen fuel cell power plant</li>
+<li>Development board "shield" for popular Arduino platform with stack control software</li>
+<li>Monitoring and data-logging via USB (voltage &amp; current)</li>
+<li>Open source hardware and software</li>
+<li>Unregulated output</li>
+<li>Expansion option to add adjustable regulated output using Pulse Width Modulation</li>
+<li>Expansion option to add remote control </li>
+<li>Expansion option to add LCD (Liquid Crystal Display)</li>
+</ul>
+
+<hr>
+
+<h3>What is included</h3>
+
+PICTURE
+
+<ol>
+<li>H-12 or H-30 fuel cell stack</li>
+<li>H2MDK Arduino Fuel Cell Shield - all code open source and free to download</li>
+<li>HydroSTIK hydrogen storage (1 with H-12, 2 with H-30). Pre-filled where delivery method allows</li>
+<li>Pressure Regulator (1 with H-12, 2 with H-30)</li>
+<li>Silicon tubing (30cm)</li>
+<li>1 x Tube Clip</li>
+<li>1 x Purge valve</li>
+<li>Red/black electrical cable </li>
+</ol>
+
+<hr>
+
+<h3>What you will need</h3>
+
+<ul>
+<li>Arduino Uno</li>
+<li>USB Cable</li>
+</ul>
+
+<hr>
+
+<h3>Setup instructions</h3>
+
+<h4>Connect H2 regulator and purge valve</h4>
+
+PICTURE
+
+<ol>
+<li>Cut a short length of silicone tube (approx 3cm)</li>
+<li>Push one end of the short length onto the white nozzle of the purge valve</li>
+<li>Push the other end of this tube onto the outlet nozzle of the fuel cell stack</li>
+<li>Cut a longer piece of silicone (about 8cm)</li>
+<li>Thread the longer length of silicone through the plastic tube clip. This clip will be used later to open or close the flow of hydrogen whilst the regulator and HydroSTIK are connected</li>
+<li>Unscrew the nut from the regulator and thread one end of the tube through the nut before pushing the tube onto the regulator and tightening the nut over the tube (there is no need to use a spanner - finger-tight is sufficient)</li>
+<li>Connect the other end to the fuel cell stack inlet by pushing the tube over the inlet nozzle</li>
+</ol>
+
+<h4>Electrical connections to Arduino shield</h4>
+
+<ol>
+<li>Take the black wire from the fuel cell stack and connect to the terminal on the Arduino shield labelled  GND</li>
+<li>Take the red wire from the fuel cell stack and connect to the terminal on the Arduino shield labelled FC IN</li>
+<li>Connect one wire (doesn't matter which of the two) from the purge valve to the terminal on the Arduino shield labelled PURGE</li>
+<li>Connect the other wire from the purge valve to the terminal on the Arduino shield labelled PURGE</li>
+</ol>
+
+<h4>Prepare Arduino and fuel cell control shield</h4>
+<ol>
+<li>If you do not already have the Arduino environment and drivers installed on your computer, <a href="http://arduino.cc/en/Guide/HomePage">follow these instructions</a>, relating to your operating system</li>
+<li>Plug the Fuel Cell Shield into the Arduino Uno taking care that all the pins on the underside of the shield slot into the holes in the Arduino Uno stackable header</li>
+<li>Ensure that the jumper is not fitted on the H2MDK shield as you will initially use the kit connected to your computer (see "jumper" instruction of the <a href=h2operation.html">operation</a> section below)</li>
+<li>Connect your Arduino to your computer using a standard USB cable</li>
+<li>Launch the Arduino Environment software on your computer</li>
+<li>In the "Tools" menu, check that you have correct Board selected (Arduino Uno) and correct Serial Port (see Arduino Help if you are uncertain, and test with example sketches  from the Arduino Environment "File" menu)</li>
+<li>Download the <a href="www.arcolaenergy.com/h2mdk">latest version of the H2MDK Arduino library</a></li>
+<li>Unzip the library in the libraries directory in your sketchbook folder</li>
+<li>Open the example file in the Arduino Environment: "File", "Examples", "H2MDK", "h2mdk"</li>
+<li>Click the "Upload" button to upload the software to the Arduino</li>
+<li>Open the Serial Monitor from the Tools menu in the Arduino Environment</li>
+<li>Check that the baud rate (bottom-right of the window) is set at 9600.  You should see text appear in the Serial Monitor window to indicate that the software is running</li>
+</ol>
+
+<h4>Connect hydroSTIK and load</h4>
+
+<b>IMPORTANT: The fuel cell stack requires unobstructed airflow to all vents in order to function as the oxygen used in the electrochemical reaction is drawn through these vents. Obstructed air supply will reduce the performance and lifetime of your stacks.</b>
+
+<ol>
+<li>Ensure the plastic clip on the tube between the regulator and the inlet valve is closed</li>
+<li>Screw a HydroSTIK into the regulator</li>
+<li>Ensure stack is mounted or positioned so that the vents on both sides are open to the air</li>
+<li>Open the clip on the tube to allow hydrogen to flow into the fuel cell stack. It is normal for the HydroSTIK to get cold during operation - how cold will depend on factors including current drawn and ambient temperature. The fans on the fuel cell should start spinning</li>
+<li>You can now connect the negative wire of your electrical load to the terminal marked GND and the positive wire to the terminal marked FC OUT</li>
+<li>When you wish to turn off the system, first disconnect your load from the FC OUT terminal</li>
+<li>Close the clip on the hydrogen supply tube to stop the flow of Hydrogen</li>
+</ol>
+                                                  
+Care should be taken not to overload the stack. Ensure that the maximum current drawn by your equipment cannot exceed that which the stack can supply (12 or 30W). For more information on stack performance, including IV characteristics consult the <a href="http://www.horizonfuelcell.com/fuel_cell_stacks.htm">Horizon Fuel Cell H-Series User Guide</a>
+
+<hr>
+
+<h3>Power output &amp; conditioning</h3>
+
+<p>The 12/30W H2MDK Fuel Cell Shield controls the fuel cell, but does not regulate the output power (unlike the 3W Shield which has inbuilt voltage regulation and smoothing). Thus the voltage you see across the load terminals of the Shield is that of the fuel cell stack. Furthermore, by default the Shield short-circuits the stack periodically to maintain stack condition and in this time the power output will drop to zero (an onboard capacitor maintains power to the Arduino during shorting).</p>
+
+<p>One of the first projects you will likely undertake is to add power conditioning. Depending on the requirements of your load (e.g. 12V, 24V), you should be able to find an off-the-shelf DC-DC convertor to suit your needs. For advanced users, you can of course build your own, making use of the Pulse Width Modulation output from the Arduino.</p>
+
+<p>The plots below show the characteristics of the H-12, H-20 and H-30 as supplied off-the-shelf by Horizon. Note that the H-20 is the same physical stack as the H-12, but it can deliver more power because the H-12 is supplied without any fuel cell control (short-circuiting and purging). Knowing this you can decide whether to simplify your system and run without short-circuiting at lower power or increase complexity by adding capacitors to smooth the output during short-circuit and therefore achieve higher power.</p>
+
+<p>Find out more about frequency and duration of short-circuiting by studying the <a href="http://www.github.com/arcolaenergy.com/">library</a></p>
+
+<hr>
+
+<a href="h2operation.html">Operation</a>
+
+<hr>
+
+<a href="h2supply.html">Hydrogen Supply</a>
+
+<hr>
+
+<a href="h2safety.html">Safety</a>
+
+<hr>
+
+<a href="h2support.html">Support</a>

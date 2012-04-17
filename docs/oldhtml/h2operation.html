@@ -1,34 +1,35 @@
-<h3 name="operation">Operation</h3>
+<html>
+<h3>Operation</h3>
 
 <h4>Standalone use</h4>
-The system can be used without being connected to the USB port of your computer. Simply connect the components as outlined above and open the hydrogen supply. Ensure the Jumper is fitted to allow the Arduino to be powered by the stack.
+<p>The system can be used without being connected to the USB port of your computer. Simply connect the components as outlined above and open the hydrogen supply. Ensure the Jumper is fitted to allow the Arduino to be powered by the stack.</p>
 
 <h4>Status LEDS</h4>
-There are 3 LEDS:
+<p>There are 3 LEDS:</p>
 <ul>
 <li>the status LED flashes every 400ms at start up while the capacitors charge. When the system is operating normally the LED will flash every second</li>
-<li>the short LED shows when the fuel cell is shorted. This maintains proper temperature and humidity inside the stack.
-<li>the purge LED shows when the purge valve operates.
+<li>the short LED shows when the fuel cell is shorted. This maintains proper temperature and humidity inside the stack</li>
+<li>the purge LED shows when the purge valve operates</li>
 </ul>
 
 <h4>Purge</h4>
-Every few minutes, you will hear a short "hiss" as the purge valves open. This purging allows fresh hydrogen to flow in to the stack.
+<p>Every few minutes, you will hear a short "hiss" as the purge valves open. This purging allows fresh hydrogen to flow in to the stack.</p>
 
 <h4>Waste water</h4>
-The by-product of the electrochemical reaction is a small amount of water. This is released through the vents on both sides of the stack. The larger the electrical load, the more water will be produced. This small amount of water usually evaporates, however occasionally under high load, droplets are formed therefore the stack should not be placed in a moisture sensitive area. 
+<p>The by-product of the electrochemical reaction is a small amount of water. This is released through the vents on both sides of the stack. The larger the electrical load, the more water will be produced. This small amount of water usually evaporates, however occasionally under high load, droplets are formed therefore the stack should not be placed in a moisture sensitive area.</p>
 
 <h4>Overload protection</h4>
-The Stack Control Shield is fitted with a re-settable fuse. If you overload (or short circuit) the output, then the fuse will trip. To reset it, disconnect the load and stop the hydrogen supply by closing the supply clip. Wait for 10 seconds to allow the fuse to cool down before reopening the hydrogen supply.
+<p>The Stack Control Shield is fitted with a re-settable fuse. If you overload (or short circuit) the output, then the fuse will trip. To reset it, disconnect the load and stop the hydrogen supply by closing the supply clip. Wait for 10 seconds to allow the fuse to cool down before reopening the hydrogen supply.</p>
 
 <h4>Fuel cell maintenance and use</h4>
-Please check the <a href="http://www.horizonfuelcell.com/fuel_cell_stacks.htm">Horizon Fuel Cell H-Series User Guide</a> for further instructions on use and maintenance of your Fuel Cell stack to prevent degradation due to mishandling. 
+<p>Please check the <a href="http://www.horizonfuelcell.com/fuel_cell_stacks.htm">Horizon Fuel Cell H-Series User Guide</a> for further instructions on use and maintenance of your Fuel Cell stack to prevent degradation due to mishandling. </p>
 
 <h4>Software downloads</h4>
-Latest fuel cell stack control software is available from the <a href="http://www.github.com/arcolaenergy.com/">GIT repository</a>
-The software is fully documented inline, including instructions for use.
+<p>Latest fuel cell stack control software is available from the <a href="http://www.github.com/arcolaenergy.com/">GIT repository</a>
+The software is fully documented inline, including instructions for use.</p>
 
 <h4>Monitoring fuel cell status</h4>
 
-The fuel cell status (stack voltage and current) is displayed by default in the Arduino Serial Monitor. For further information, please see software documentation.
+<p>The fuel cell status (stack voltage and current) is displayed by default in the Arduino Serial Monitor. For further information, please see software documentation.</p>
 
-
+</html>

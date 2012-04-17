@@ -44,6 +44,16 @@ PICTURE
 <li>Red/black electrical cable </li>
 </ol>
 
+<h3>Included in the power extender module</h3>
+
+PICTURE
+
+<ol>
+<li>1.5W stack</li>
+<li>2 x tee splitter</li>
+<li>Silicon tubing (30cm)</li>
+</ol>
+
 <hr>
 
 <h3>What you will need</h3>
@@ -56,7 +66,7 @@ PICTURE
 
 <hr>
 
-<h3>Setup instructions</h3>
+<h3>Setup instructions for single stack</h3>
 
 <h4>Connect H2 regulator and purge valve</h4>
 
@@ -72,20 +82,26 @@ PICTURE
 <li>Connect the other end to the fuel cell stack inlet by pushing the tube over the inlet nozzle</li>
 </ol>
 
-<h4>Electrical connections to Arduino shield</h4>
+<h4>Solder wires to fuel cell stack</h4>
+
+<b>Important</b>
+<p> Fuel cell stacks must be connected with correct polarity otherwise components will be damaged. 
+Please check that the red and black wires are soldered to the correct terminals as outlined below.</p>
+
+PICTURE
 
 <ol>
-SOLDER WIRES TO FUEL CELL STACKS
-IMPORTANT – Fuel cell stacks must be connected with correct polarity otherwise components will be damaged. 
-Please check that the red and black wires are soldered to the correct terminals as outlined below.
+<li>Cut the wires into 15cm lengths: 1 x red. 1 x black.</li>
+<li>Strip approx 5mm of insulation from each end of the loose wires.</li>
+<li>Orientate the stack so that the nozzle is at the top as you look at the side with the solder tags</li>
+<li>Solder one red wire to the left hand solder-tag terminal of the fuel cell stack</li>
+<li>Solder one black wire to the right hand solder-tag terminal of the fuel cell stack</li>
+</ol>
 
-1. Cut the wires into 15cm lengths: 2 x red. 2 x black.
-2. Strip approx 5mm of insulation from each end of the loose wires.
-3. Orientate the stack so that the nozzle is at the top as you look at the side with the solder tags (see figure 1).
-4. Solder one red wire to the left hand solder-tag terminal of the first fuel cell stack (see figure 2).
-5. Solder one black wire to the right hand solder-tag terminal of the first fuel cell stack (see figure 2).
-6. Repeat for the second stack.
+PICTURE
 
+<h4>Electrical connections to Arduino shield</h4>
+<ol>
 <li>Take the black wire from the fuel cell stack and connect to the terminal on the Arduino shield labelled  GND</li>
 <li>Take the red wire from the fuel cell stack and connect to the terminal on the Arduino shield labelled FC IN</li>
 <li>Connect one wire (doesn't matter which of the two) from the purge valve to the terminal on the Arduino shield labelled PURGE</li>
@@ -110,7 +126,8 @@ Please check that the red and black wires are soldered to the correct terminals 
 
 <h4>Connect hydroSTIK and load</h4>
 
-<b>IMPORTANT: The fuel cell stack requires unobstructed airflow to all vents in order to function as the oxygen used in the electrochemical reaction is drawn through these vents. Obstructed air supply will reduce the performance and lifetime of your stacks.</b>
+<b>Important</b>
+<p>The fuel cell stack requires unobstructed airflow to all vents in order to function as the oxygen used in the electrochemical reaction is drawn through these vents. Obstructed air supply will reduce the performance and lifetime of your stacks.</p>
 
 <ol>
 <li>Ensure the plastic clip on the tube between the regulator and the inlet valve is closed</li>
@@ -122,15 +139,46 @@ Please check that the red and black wires are soldered to the correct terminals 
 <li>Close the clip on the hydrogen supply tube to stop the flow of Hydrogen</li>
 </ol>
                                                   
-Care should be taken not to overload the stack. Ensure that the maximum current drawn by your equipment cannot exceed that which the stack can supply (1.5 or 3W). For more information on stack performance, including IV characteristics consult the <a href="http://www.horizonfuelcell.com/fuel_cell_stacks.htm">Horizon Fuel Cell H-Series User Guide</a>
+<p>Care should be taken not to overload the stack. Ensure that the maximum current drawn by your equipment cannot exceed that which the stack can supply (1.5 or 3W). For more information on stack performance, including IV characteristics consult the <a href="http://www.horizonfuelcell.com/fuel_cell_stacks.htm">Horizon Fuel Cell H-Series User Guide</a></p>
 
-CONNECTING THE POWER EXTENDER MODULE (SECOND STACK)
+<hr>
 
+<h3>Setup instructions using power extender module (2 stacks)</h4>
 
-1. By repeating the instructions above, a second stack can be added to double the output of the system. The second stack should be connected to STACK- and STACK+ and the second purge valve should be connected to PURGE- and PURGE+
-2. Depending on user requirements (weight vs runtime vs power), the system can be configured in various ways as outlined below. 
-The hydrogen supply T-splitter can be used to connect two Hydrostiks to one stack or two stacks to one Hydrostik.
+<p>The instructions for using 2 stacks differ only in the hydrogen and electrical connections. These are detailed below. Follow all the other instructions detailed in the single stack setup.</p>
 
+<h4>Connect H2 regulator and purge valve</h4>
+
+PICTURE
+
+<ol>
+<li>Cut a short length of silicone tube (approx 3cm)</li>
+<li>Push one end of the short length onto the white nozzle of the purge valve</li>
+<li>Push the other end of this tube onto tee splitter</li>
+<li>Cut two 8cm pieces of silicone, connect one to each of the other ends of the first tee splitter</li>
+<li>Connect each free end from the tee piece to the outlet nozzle of each fuel cell stack</li>
+<li>Cut another two 8cm pieces of silicone, connect one to each of the other ends of the second tee splitter</li>
+<li>Connect each free end from the tee piece to the inlet nozzle of each fuel cell stack</li>
+<li>Cut another 8cm piece of silicone and thread through the plastic tube clip</li>
+<li>Unscrew the nut from the regulator and thread one end of the tube through the nut before pushing the tube onto the regulator and tightening the nut over the tube (there is no need to use a spanner - finger-tight is sufficient)</li>
+</ol>
+
+<h4>Solder wires to fuel cell stack</h4>
+
+<b>Important</b>
+<p>Fuel cell stacks must be connected with correct polarity otherwise components will be damaged. 
+Please check that the red and black wires are soldered to the correct terminals as outlined below.</p>
+
+PICTURE
+
+<ol>
+<li>Cut the wires into two 15cm lengths: 1 x red. 1 x black, and 1 x black 5cm length.</li>
+<li>Strip approx 5mm of insulation from each end of the loose wires.</li>
+<li>Orientate the stacks so that the nozzle is at the top as you look at the side with the solder tags</li>
+<li>Solder 15cm red wire to the left hand solder-tag terminal of the left hand fuel cell stack</li>
+<li>Solder 15cm black wire to the right hand solder-tag terminal of the right hand fuel cell stack</li>
+<li>Solder 5cm black wire from the right hand solder-tag of the left fuel cell to the left hand solder-tag of the right fuel cell</li>
+</ol>
 
 <hr>
 

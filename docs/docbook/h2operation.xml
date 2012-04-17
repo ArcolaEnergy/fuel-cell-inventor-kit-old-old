@@ -1,0 +1,50 @@
+<sect1 id="operation">
+<title>Operation</title>
+
+<sect2>
+<title>Standalone use</title>
+<para>The system can be used without being connected to the USB port of your computer. Simply connect the components as outlined above and open the hydrogen supply. Ensure the Jumper is fitted to allow the Arduino to be powered by the stack.</para>
+</sect2>
+<sect2>
+<title>Status LEDS</title>
+<para>There are 3 LEDS:</para>
+<itemizedlist>
+<listitem>the status LED flashes every 400ms at start up while the capacitors charge. When the system is operating normally the LED will flash every second</listitem>
+<listitem>the short LED shows when the fuel cell is shorted. This maintains proper temperature and humidity inside the stack</listitem>
+<listitem>the purge LED shows when the purge valve operates</listitem>
+</itemizedlist>
+
+</sect2>
+<sect2>
+<title>Purge</title>
+<para>Every few minutes, you will hear a short "hiss" as the purge valves open. This purging allows fresh hydrogen to flow in to the stack.</para>
+
+</sect2>
+<sect2>
+<title>Waste water</title>
+<para>The by-product of the electrochemical reaction is a small amount of water. This is released through the vents on both sides of the stack. The larger the electrical load, the more water will be produced. This small amount of water usually evaporates, however occasionally under high load, droplets are formed therefore the stack should not be placed in a moisture sensitive area.</para>
+
+</sect2>
+<sect2>
+<title>Overload protection</title>
+<para>The Stack Control Shield is fitted with a re-settable fuse. If you overload (or short circuit) the output, then the fuse will trip. To reset it, disconnect the load and stop the hydrogen supply by closing the supply clip. Wait for 10 seconds to allow the fuse to cool down before reopening the hydrogen supply.</para>
+
+</sect2>
+<sect2>
+<title>Fuel cell maintenance and use</title>
+<para>Please check the <ulink url="http://www.horizonfuelcell.com/fuel_cell_stacks.htm">Horizon Fuel Cell H-Series User Guide</ulink> for further instructions on use and maintenance of your Fuel Cell stack to prevent degradation due to mishandling. </para>
+
+</sect2>
+<sect2>
+<title>Software downloads</title>
+<para>Latest fuel cell stack control software is available from the <ulink url="http://www.github.com/arcolaenergy/">GIT repository</ulink>
+The software is fully documented inline, including instructions for use.</para>
+
+</sect2>
+<sect2>
+<title>Monitoring fuel cell status</title>
+
+<para>The fuel cell status (stack voltage and current) is displayed by default in the Arduino Serial Monitor. For further information, please see software documentation.</para>
+
+</sect2>
+</sect1>

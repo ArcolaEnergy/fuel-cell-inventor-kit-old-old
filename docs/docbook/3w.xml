@@ -89,7 +89,6 @@
 
 </sect1>
 <sect1 id="what is needed">
-
 <title>What you will need</title>
 
 <itemizedlist>
@@ -101,9 +100,7 @@
 
 </sect1>
 <sect1 id="setup instructions for single stack">
-
 <title>Setup instructions for single stack</title>
-
 <sect2><title>Connect H2 regulator and purge valve</title>
 
 <figure>
@@ -265,7 +262,6 @@ Please check that the red and black wires are soldered to the correct terminals 
 Therefore whenever the fuel cell stack is not be used for more than one hour, it should be stored in the sealed airtight bag.
 </important>
 
-
 </sect1>
 <sect1 id="reconditioning">
 <title>Reconditioning</title>
@@ -287,9 +283,7 @@ Therefore whenever the fuel cell stack is not be used for more than one hour, it
 
 </sect1>
 <xi:include href="h2supply.xml" />
-
 <xi:include href="h2safety.xml" />
-
 <xi:include href="h2support.xml" />
 
 </article>

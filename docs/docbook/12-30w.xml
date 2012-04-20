@@ -49,7 +49,20 @@
 <sect1 id="included">
 <title>What is included</title>
 
-PICTURE
+       <figure>
+         <title>What is included</title>
+         <mediaobject>
+           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/12-30w/contents.jpg"/> </imageobject>
+         </mediaobject>
+       </figure>
+
+       <figure>
+         <title>12W and 30W stack</title>
+         <mediaobject>
+           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/12-30w/h12-and-h30.jpg"/> </imageobject>
+         </mediaobject>
+       </figure>
+
 
 <orderedlist>
 <listitem>H-12 or H-30 fuel cell stack</listitem>
@@ -66,6 +79,13 @@ PICTURE
 <sect1 id="what is needed">
 <title>What you will need</title>
 
+       <figure>
+         <title>Arduino</title>
+         <mediaobject>
+           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/12-30w/ArduinoUnoFront.jpg"/> </imageobject>
+         </mediaobject>
+       </figure>
+
 <itemizedlist>
 <listitem>Arduino Uno</listitem>
 <listitem>USB Cable</listitem>
@@ -78,7 +98,12 @@ PICTURE
 <sect2>
 <title>Connect H2 regulator and purge valve</title>
 
-PICTURE
+       <figure>
+         <title>Hydrogen Plumbing</title>
+         <mediaobject>
+           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/12-30w/stack-reg-valve.jpg"/> </imageobject>
+         </mediaobject>
+       </figure>
 
 <orderedlist>
 <listitem>Cut a short length of silicone tube (approx 3cm)</listitem>
@@ -122,6 +147,13 @@ PICTURE
 </sect2>
 <sect2>
 <title>Connect hydroSTIK and load</title>
+
+       <figure>
+         <title>Connect hydroSTIK</title>
+         <mediaobject>
+           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/12-30w/full-kit-working.jpg"/> </imageobject>
+         </mediaobject>
+       </figure>
 
 <important>
 The fuel cell stack requires unobstructed airflow to all vents in order to function as the oxygen used in the electrochemical reaction is drawn through these vents. Obstructed air supply will reduce the performance and lifetime of your stacks.</important>

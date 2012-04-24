@@ -4,7 +4,10 @@
     version="1.0">
 <xsl:import href="http://docbook.sourceforge.net/release/xsl/current/fo/docbook.xsl"/>
 
+<xsl:param name="body.font.family">Helvetica</xsl:param>
 <xsl:param name="paper.type">A4</xsl:param>
+<xsl:param name="alignment">left</xsl:param>
+
 
 <!-- turn off the ruler under header -->
 <xsl:param name="header.rule" select="0"/>

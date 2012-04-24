@@ -7,7 +7,7 @@
 
   <articleinfo>
 
-    <title>H2MDK 12-30W Inventor Kit</title>
+    <title>H2MDK 12-30W Fuel Cell Inventor Kit</title>
     <subtitle>User Guide</subtitle>
     <revhistory>
      <revision>
@@ -28,6 +28,12 @@
 <para>An open source platform supported by an online developer forum encourages rapid customisation of systems, control and user interface for a wide range of applications from model trains, planes and automobiles, to remote monitoring systems. 
 </para>
 
+<para>This manual doesn't attempt to replace the manual that comes with the fuel cell stack. Read the fuel cell manual to get an understanding of how to properly treat the stack.</para>
+
+<para>
+Photographs in this guide show the H-12 stack, but instructions apply equally the H-30 stack.
+</para>
+
 </sect1>
 <sect1 id="features">
 <title>Features</title>
@@ -40,8 +46,6 @@
 <listitem>Monitoring and data-logging via USB (voltage &amp; current)</listitem>
 <listitem>Open source hardware and software</listitem>
 <listitem>Unregulated output</listitem>
-<listitem>Expansion option to add adjustable regulated output using Pulse Width Modulation</listitem>
-<listitem>Expansion option to add remote control </listitem>
 <listitem>Expansion option to add LCD (Liquid Crystal Display)</listitem>
 </itemizedlist>
 
@@ -112,6 +116,9 @@
          </mediaobject>
        </figure>
 
+<important>
+If you plan to use more than 20W with the H-30, you may need to connect 2 hydroSTIKs with a tee splitter to the H-30 to increase the flow of hydrogen.</important>
+
 <orderedlist>
 <listitem>Cut a short length of silicone tube (approx 3cm)</listitem>
 <listitem>Push one end of the short length onto the white nozzle of the purge valve</listitem>
@@ -142,24 +149,9 @@
 </orderedlist>
 
 </sect2>
-<sect2>
-<title>Prepare Arduino and fuel cell control shield</title>
-<orderedlist>
-<listitem>If you do not already have the Arduino environment and drivers installed on your computer, <ulink url="http://arduino.cc/en/Guide/HomePage">follow these instructions</ulink>, relating to your operating system</listitem>
-<listitem>Plug the Fuel Cell Shield into the Arduino Uno taking care that all the pins on the underside of the shield slot into the holes in the Arduino Uno stackable header</listitem>
-<listitem>Ensure that the jumper is not fitted on the H2MDK shield as you will initially use the kit connected to your computer (see "jumper" instruction of the <ulink url="h2operation.html">operation</ulink> section below)</listitem>
-<listitem>Connect your Arduino to your computer using a standard USB cable</listitem>
-<listitem>Launch the Arduino Environment software on your computer</listitem>
-<listitem>In the "Tools" menu, check that you have correct Board selected (Arduino Uno) and correct Serial Port (see Arduino Help if you are uncertain, and test with example sketches  from the Arduino Environment "File" menu)</listitem>
-<listitem>Download the <ulink url="www.arcolaenergy.com/h2mdk">latest version of the H2MDK Arduino library</ulink></listitem>
-<listitem>Unzip the library in the libraries directory in your sketchbook folder</listitem>
-<listitem>Open the example file in the Arduino Environment: "File", "Examples", "H2MDK", "h2mdk"</listitem>
-<listitem>Click the "Upload" button to upload the software to the Arduino</listitem>
-<listitem>Open the Serial Monitor from the Tools menu in the Arduino Environment</listitem>
-<listitem>Check that the baud rate (bottom-right of the window) is set at 9600.  You should see text appear in the Serial Monitor window to indicate that the software is running</listitem>
-</orderedlist>
 
-</sect2>
+<xi:include href="h2software.xml" />
+
 <sect2>
 <title>Connect hydroSTIK and load</title>
 
@@ -217,9 +209,11 @@ Care should be taken not to overload the stack. Ensure that the maximum current 
 
 </sect1>
 
-<xi:include href="h2operation.xml" />
+<xi:include href="h2operation12w.xml" />
+<xi:include href="h2storage.xml" />
 <xi:include href="h2supply.xml" />
 <xi:include href="h2safety.xml" />
 <xi:include href="h2support.xml" />
+<xi:include href="h2license.xml" />
 
 </article>

@@ -8,7 +8,7 @@
 
   <articleinfo>
 
-    <title>H2MDK 3W Inventor Kit</title>
+    <title>H2MDK 1.5-3W Fuel Cell Inventor Kit</title>
     <subtitle>User Guide</subtitle>
     <revhistory>
      <revision>
@@ -29,6 +29,7 @@
 <para>An open source platform supported by an online developer forum encourages rapid customisation of systems, control and user interface for a wide range of applications from model trains, planes and automobiles, to remote monitoring systems. 
 </para>
                                                                    
+<para>This manual doesn't attempt to replace the manual that comes with the fuel cell stack. Read the fuel cell manual to get an understanding of how to properly treat the stack.</para>
 
 </sect1>
 <sect1 id="features">
@@ -163,24 +164,9 @@ Please check that the red and black wires are soldered to the correct terminals 
 </orderedlist>
 
 </sect2>
-<sect2><title>Prepare Arduino and fuel cell control shield</title>
 
-<orderedlist>
-<listitem>If you do not already have the Arduino environment and drivers installed on your computer, <ulink url="http://arduino.cc/en/Guide/HomePage">follow these instructions</ulink>, relating to your operating system</listitem>
-<listitem>Plug the Fuel Cell Shield into the Arduino Uno taking care that all the pins on the underside of the shield slot into the holes in the Arduino Uno stackable header</listitem>
-<listitem>Ensure that the jumper is not fitted on the H2MDK shield as you will initially use the kit connected to your computer (see "jumper" instruction of the <ulink url="h2operation.html">operation</ulink> section below)</listitem>
-<listitem>Connect your Arduino to your computer using a standard USB cable</listitem>
-<listitem>Launch the Arduino Environment software on your computer</listitem>
-<listitem>In the "Tools" menu, check that you have correct Board selected (Arduino Uno) and correct Serial Port (see Arduino Help if you are uncertain, and test with example sketches  from the Arduino Environment "File" menu)</listitem>
-<listitem>Download the <ulink url="www.arcolaenergy.com/h2mdk">latest version of the H2MDK Arduino library</ulink></listitem>
-<listitem>Unzip the library in the libraries directory in your sketchbook folder</listitem>
-<listitem>Open the example file in the Arduino Environment: "File", "Examples", "H2MDK", "h2mdk"</listitem>
-<listitem>Click the "Upload" button to upload the software to the Arduino</listitem>
-<listitem>Open the Serial Monitor from the Tools menu in the Arduino Environment</listitem>
-<listitem>Check that the baud rate (bottom-right of the window) is set at 9600.  You should see text appear in the Serial Monitor window to indicate that the software is running</listitem>
-</orderedlist>
+<xi:include href="h2software.xml" />
 
-</sect2>
 <sect2><title>Connect hydroSTIK and load</title>
 
        <figure>
@@ -262,18 +248,10 @@ Please check that the red and black wires are soldered to the correct terminals 
 
 </sect1>
 
-<xi:include href="h2operation.xml" />
+<xi:include href="h2operation3w.xml" />
 
-<sect1 id="storage">
+<xi:include href="h2storage.xml" />
 
-
-<title>Storage</title>
-
-<important>The fuel cell stacks will degrade if they are allowed to dry out.
-Therefore whenever the fuel cell stack is not be used for more than one hour, it should be stored in the sealed airtight bag.
-</important>
-
-</sect1>
 <sect1 id="reconditioning">
 <title>Reconditioning</title>
 <para>If the fuel cell is not used for several days or is not working at the rated power, it can be reconditioned as follows:</para>
@@ -296,5 +274,6 @@ Therefore whenever the fuel cell stack is not be used for more than one hour, it
 <xi:include href="h2supply.xml" />
 <xi:include href="h2safety.xml" />
 <xi:include href="h2support.xml" />
+<xi:include href="h2license.xml" />
 
 </article>

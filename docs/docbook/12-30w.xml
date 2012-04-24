@@ -57,11 +57,18 @@
        </figure>
 
        <figure>
-         <title>12W and 30W stack</title>
+         <title>12W stack</title>
          <mediaobject>
-           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/12-30w/h12-and-h30.jpg"/> </imageobject>
+           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/12-30w/H12.jpg"/> </imageobject>
          </mediaobject>
        </figure>
+       <figure>
+         <title>30W stack</title>
+         <mediaobject>
+           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/12-30w/H30.jpg"/> </imageobject>
+         </mediaobject>
+       </figure>
+
 
 
 <orderedlist>
@@ -101,7 +108,7 @@
        <figure>
          <title>Hydrogen Plumbing</title>
          <mediaobject>
-           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/12-30w/stack-reg-valve.jpg"/> </imageobject>
+           <imageobject><imagedata scalefit="1" width="60%" fileref="pics/12-30w/12W-with-clip.jpg"/> </imageobject>
          </mediaobject>
        </figure>
 
@@ -118,6 +125,14 @@
 </sect2>
 <sect2>
 <title>Electrical connections to Arduino shield</title>
+
+       <figure>
+         <title>Electrical connections</title>
+         <mediaobject>
+           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/12-30w/electricalconnections.jpg"/> </imageobject>
+         </mediaobject>
+       </figure>
+
 
 <orderedlist>
 <listitem>Take the black wire from the fuel cell stack and connect to the terminal on the Arduino shield labelled  GND</listitem>
@@ -184,6 +199,21 @@ Care should be taken not to overload the stack. Ensure that the maximum current 
 <para>The plots below show the characteristics of the H-12, H-20 and H-30 as supplied off-the-shelf by Horizon. Note that the H-20 is the same physical stack as the H-12, but it can deliver more power because the H-12 is supplied without any fuel cell control (short-circuiting and purging). Knowing this you can decide whether to simplify your system and run without short-circuiting at lower power or increase complexity by adding capacitors to smooth the output during short-circuit and therefore achieve higher power.</para>
 
 <para>Find out more about frequency and duration of short-circuiting by studying the <ulink url="http://www.github.com/arcolaenergy.com/">library.</ulink></para>
+
+       <figure>
+         <title>12W IV curve</title>
+         <mediaobject>
+           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/12-30w/12Wivcurve.jpg"/> </imageobject>
+         </mediaobject>
+       </figure>
+
+       <figure>
+         <title>30W IV curve</title>
+         <mediaobject>
+           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/12-30w/30Wivcurve.jpg"/> </imageobject>
+         </mediaobject>
+       </figure>
+
 
 </sect1>
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+
 <article
   xmlns="http://docbook.org/ns/docbook"
   xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -18,7 +19,6 @@
   </revhistory>
   <publisher><publishername>Arcola Energy</publishername></publisher>
   </articleinfo>
-
 
 
 <sect1 id="overview">
@@ -53,7 +53,7 @@
        <figure>
          <title>What is included</title>
          <mediaobject>
-           <imageobject><imagedata fileref="figure.png" format="PNG" /></imageobject>
+           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/3w/included.jpg"/></imageobject>
          </mediaobject>
        </figure>
 
@@ -68,15 +68,15 @@
 <listitem>Red/black electrical cable </listitem>
 </orderedlist>
 
-<title>Included in the power extender module</title>
-
 </sect1>
+
 <sect1 id="included in the extender module">
+<title>Included in the power extender module</title>
 
        <figure>
          <title>What is included in the extender module</title>
          <mediaobject>
-           <imageobject><imagedata fileref="figure.png" format="PNG" /></imageobject>
+           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/3w/expansionmodule.jpg"/></imageobject>
          </mediaobject>
        </figure>
 
@@ -101,12 +101,13 @@
 </sect1>
 <sect1 id="setup instructions for single stack">
 <title>Setup instructions for single stack</title>
-<sect2><title>Connect H2 regulator and purge valve</title>
+<sect2>
+<title>Connect H2 regulator and purge valve</title>
 
 <figure>
  <title>Hydrogen plumbing</title>
  <mediaobject>
-   <imageobject><imagedata fileref="figure.png" format="PNG" /></imageobject>
+           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/3w/plumbing.jpg"/></imageobject>
  </mediaobject>
 </figure>
 
@@ -120,7 +121,9 @@
 <listitem>Connect the other end to the fuel cell stack inlet by pushing the tube over the inlet nozzle</listitem>
 </orderedlist>
 </sect2>
-<sect2><title>Solder wires to fuel cell stack</title>
+
+<sect2>
+<title>Solder wires to fuel cell stack</title>
 
 <important>
 Fuel cell stacks must be connected with correct polarity otherwise components will be damaged. 
@@ -130,7 +133,7 @@ Please check that the red and black wires are soldered to the correct terminals 
 <figure>
  <title>Solder wires to fuel cell</title>
  <mediaobject>
-   <imageobject><imagedata fileref="figure.png" format="PNG" /></imageobject>
+           <imageobject><imagedata scalefit="1" width="60%" fileref="pics/3w/wiringfuelcellsingle.jpg"/></imageobject>
  </mediaobject>
 </figure>
 
@@ -148,7 +151,7 @@ Please check that the red and black wires are soldered to the correct terminals 
 <figure>
  <title>Electrical connections</title>
  <mediaobject>
-   <imageobject><imagedata fileref="figure.png" format="PNG" /></imageobject>
+           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/3w/wiring.jpg"/></imageobject>
  </mediaobject>
 </figure>
 
@@ -180,6 +183,14 @@ Please check that the red and black wires are soldered to the correct terminals 
 </sect2>
 <sect2><title>Connect hydroSTIK and load</title>
 
+       <figure>
+         <title>Connect hydroSTIK and load</title>
+         <mediaobject>
+           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/3w/fullsetup.jpg"/></imageobject>
+         </mediaobject>
+       </figure>
+
+
 <important>
 The fuel cell stack requires unobstructed airflow to all vents in order to function as the oxygen used in the electrochemical reaction is drawn through these vents. Obstructed air supply will reduce the performance and lifetime of your stacks.
 </important>
@@ -207,9 +218,9 @@ The fuel cell stack requires unobstructed airflow to all vents in order to funct
 <sect2><title>Connect H2 regulator and purge valve</title>
 
        <figure>
-         <title>Hydrogen Plumbing</title>
+         <title>Hydrogen Plumbing for 2 stacks</title>
          <mediaobject>
-           <imageobject><imagedata fileref="figure.png" format="PNG" /></imageobject>
+           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/3w/doubleplumbing.jpg"/></imageobject>
          </mediaobject>
        </figure>
 
@@ -233,9 +244,9 @@ Please check that the red and black wires are soldered to the correct terminals 
 </important>
 
        <figure>
-         <title>Solder wires to fuel cell</title>
+         <title>Solder wires to 2 stacks</title>
          <mediaobject>
-           <imageobject><imagedata fileref="figure.png" format="PNG" /></imageobject>
+           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/3w/wiringfuelcelldouble.jpg"/></imageobject>
          </mediaobject>
        </figure>
 

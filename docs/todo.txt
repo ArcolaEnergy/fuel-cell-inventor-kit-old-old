@@ -1,0 +1,45 @@
+questions on text:
+
+* links to schematics?
+
+12-30w
+
+* what is pwm expansion?
+* what is remote control?
+* do we need to have the fuel cell storage like in 3w
+
+3w
+
+-------
+
+pictures for 3w
+
+* one of all the pieces in the kit
+
+<li>H2MDK Arduino Fuel Cell Shield - all code open source and free to download</li>
+<li>HydroSTIK hydrogen storage. Pre-filled where delivery method allows</li>
+<li>Pressure Regulator</li>
+<li>Silicon tubing (30cm)</li>
+<li>1 x Tube Clip</li>
+<li>1 x Purge valve</li>
+<li>Red/black electrical cable </li>
+
+* one of all the bits in the extender kit
+
+<li>1.5W stack</li>
+<li>2 x tee splitter</li>
+<li>Silicon tubing (30cm)</li>
+
+* hyrdogen plumbing for one stack
+
+* hydrogen plumbing for 2 stacks
+
+* wiring for one stack (just stacks)
+
+* wiring for 2 stacks (just stacks)
+
+* single clear picture showing: 
+    * stack, load and purge connections on the shield
+    * purge valve
+    * stacks
+    * load can be omitted, but load wires are present.

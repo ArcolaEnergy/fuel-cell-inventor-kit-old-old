@@ -1,0 +1,17 @@
+<sect1 id="safety">
+
+<title>Safety</title>
+
+<itemizedlist>
+<listitem>WARNING: Fire Hazard</listitem>
+<listitem>This is not a toy, keep away from children</listitem>
+<listitem>Read and Understand Operating instructions before use</listitem>
+<listitem>HydroSTIK contain flammable gas under pressure (most of the hydrogen is adsorbed by the metal hydride matrix but the voids are filled with gas at circa 20bar)</listitem>
+<listitem>Do not tamper with HydroSTIK. Under no circumstance should a cartridge be disassembled. Exposure to air will render the hydride material useless. Materials within the hydride are potentially dangerous.</listitem>
+<listitem>When using this kit, basic safety precautions should always be followed to reduce risk of fire, electric shock or personal injury</listitem>
+<listitem>Do not disassemble the fuel cell stack, damage will result and your warranty will be void. Stack membrane materials may be hazardous to health</listitem>
+<listitem>Keep away from alkaline and acidic environments</listitem>
+<listitem>This kit is supplied as a test and development tool. Do not use it to power safety critical appliances</listitem>
+</itemizedlist>
+
+</sect1>

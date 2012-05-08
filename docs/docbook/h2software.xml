@@ -1,0 +1,18 @@
+<sect2>
+<title>Prepare Arduino and fuel cell control shield</title>
+
+<orderedlist>
+<listitem>If you do not already have the Arduino environment and drivers installed on your computer, <ulink url="http://arduino.cc/en/Guide/HomePage">follow these instructions</ulink>, relating to your operating system</listitem>
+<listitem>Plug the Fuel Cell Shield into the Arduino Uno taking care that all the pins on the underside of the shield slot into the holes in the Arduino Uno stackable header</listitem>
+<listitem>Ensure that the jumper is not fitted on the H2MDK shield as you will initially use the kit connected to your computer (see "jumper" instruction of the <link linkend='jumper'>operation section</link> below)</listitem>
+<listitem>Connect your Arduino to your computer using a standard USB cable</listitem>
+<listitem>Download the <ulink url="www.arcolaenergy.com/h2mdk">latest version of the H2MDK Arduino library</ulink></listitem>
+<listitem>Unzip the library in the libraries directory in your sketchbook folder</listitem>
+<listitem>Launch the Arduino Environment software on your computer</listitem>
+<listitem>In the "Tools" menu, check that you have correct Board selected (Arduino Uno) and correct Serial Port (see Arduino Help if you are uncertain, and test with example sketches  from the Arduino Environment "File" menu)</listitem>
+<listitem>Open the example file in the Arduino Environment: "File", "Examples", "H2MDK", "h2mdk"</listitem>
+<listitem>Click the "Upload" button to upload the software to the Arduino</listitem>
+<listitem>Open the Serial Monitor from the Tools menu in the Arduino Environment</listitem>
+<listitem>Check that the baud rate (bottom-right of the window) is set at 9600.  You should see text appear in the Serial Monitor window to indicate that the software is running</listitem>
+</orderedlist>
+</sect2>

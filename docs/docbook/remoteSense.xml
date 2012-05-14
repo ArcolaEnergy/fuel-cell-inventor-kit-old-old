@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+
+<!--
+todo
+  schematic
+
+-->
+
+
+<article
+  xmlns="http://docbook.org/ns/docbook"
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  version="5.0">
+
+  <articleinfo>
+
+    <title>H2MDK 3W Example</title>
+    <subtitle>Remote temperature sensor</subtitle>
+  <publisher><publishername>Arcola Energy</publishername></publisher>
+  </articleinfo>
+
+
+<sect1 id="overview">
+<title>Project overview</title>
+
+<para>The aim of this project is to build a hydrogen powered remote temperature sensor. It is based on the <ulink url="http://www.arduino.cc">Arduino</ulink>, <ulink url="http://www.arcolaenergy.com/h2mdk">H2MDK fuel cell shield</ulink>, <ulink url="http://www.maxim-ic.com/datasheet/index.mvp/id/2812">Maxim DS18B20 1 Wire temperature sensor</ulink>, and the <ulink url="http://www.hoperf.com/pro/rf/cob/rfm12.htm">Hope RFM12 radio transceiver</ulink>.
+</para>
+
+</sect1>
+<sect1 id="what hardware you need">
+<title>Hardware requirements</title>
+
+<itemizedlist>
+<listitem>2 Arduinos</listitem>
+<listitem>H2MDK 3W fuel cell inventor kit</listitem>
+<listitem>2 Hope 433Mhz RFM12 transceivers</listitem>
+<listitem>2 RFM12 breakout boards (optional)</listitem>
+<listitem>1 DS18B20 temperature sensor</listitem>
+<listitem>Bread board</listitem>
+<listitem>Wires</listitem>
+<listitem>5k resistor</listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="what software you need">
+<title>Software requirements</title>
+
+<itemizedlist>
+  <listitem><ulink url="http://www.arduino.cc">Arduino IDE</ulink></listitem>
+  <listitem><ulink url="http://www.arcolaenergy.com/h2mdk">The H2MDK library</ulink></listitem>
+  <listitem><ulink url="https://github.com/jcw/jeelib">The JeeLib library for RFM12 transceivers</ulink></listitem>
+</itemizedlist>
+
+</sect1>
+
+<sect1 id="software preparation">
+  <title>Software preparation</title>
+  <sect2 id="JeeLib">
+    <title>JeeLib library</title>
+
+    <para>The JeeLib library is a set of utilities for running <ulink url="http://jeelabs.com/products/jeenode">JeeNodes</ulink>, which are small arduino compatible boards with a built in RFM12 radio. The library gives us an easy way to run these radios. We need the new version because it adds support for pin change interrupts. Download the library <ulink url="https://github.com/jcw/jeelib/zipball/master">here</ulink>. Then unzip it in your sketchbook/libraries folder.</para>
+    <para>After you've unzipped the library, we need to make a few changes to the library to allow it to work alongside the H2MDK shield. Open the RF12.cpp file with your favourite editor and on line 18 change this line:
+    <code>// #define PINCHG_IRQ 1</code>
+    to
+    <code>#define PINCHG_IRQ 1</code>
+    Then on line 73 change this line:
+    <code>define RFM_IRQ     2</code>
+    to
+    <code>define RFM_IRQ     7</code>
+    </para>
+    <para>What this does is enable <ulink url="http://arduino.cc/playground/Main/PinChangeInt">pin change interrupts</ulink> because external INT0 and INT1 are already used by the H2MDK shield. Then we set the interrupt pin that the RF12 library expects to use (pin 2, or INT0), to pin 7, which is free for us to use. Restart the Arduino IDE if you've already got it running.
+    </para>
+  </sect2>
+  <sect2 id="H2MDK library">
+    <title>H2MDK library</title>
+    <para>Make sure you've got the <ulink url="www.arcolaenergy.com/h2mdk">latest version of the H2MDK Arduino library</ulink> installed by downloading and unzipping into your sketchbook/libraries folder.
+    </para>
+    <para>
+    Start the Arduino IDE and have a look at the file->examples->H2MDK->sender and receiver sketches.
+    </para>
+  </sect2>
+</sect1>
+
+
+<sect1 id="hardware preparation">
+    <title>Hardware preparation</title>
+    <sect2 id="rfm12">
+      <title>RFM12</title>
+      <para>There are quite a few RFM12 radio module options. There are 315MHZ, 433MHz, 868MHz and 915MHz versions. We're using the 433MHz version. The others may work but haven't been tested in this application. Also, there are mounting differences: some with pins, some without. Either way, we need to be able to plug these into a breadboard. So if you feel happy soldering the 2mm pitch pins then solder some wires onto the following pins: GND, INT, SDO, SCK, SEL, SDI and VCC. Alternatively, you can buy an RFM12 on a breakout board from a number of suppliers, including <ulink url="http://jeelabs.com/products/rfm12b-board">JeeLib (includes the RFM12)</ulink> or <ulink url="http://lab.robomotic.com/shop?page=shop.product_details&amp;flypage=flypage-ask.tpl&amp;product_id=17&amp;category_id=1">Robotmotic's breakout board (requires the pinless version of the RFM12)</ulink>. Finally, if you want to make your own breakout board, here are the <ulink url="https://github.com/mattvenn/eagle-circuit-designs/tree/master/hope%20rm12b%20bob">Eagle schematics for a breakout board (requires the pinned version of the RFM12)</ulink>.
+       <figure>
+         <title>RFM12 connections</title>
+         <mediaobject>
+           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/remoteSense/rfm12connections.JPG"/></imageobject>
+         </mediaobject>
+       </figure>
+      </para>
+    </sect2>
+
+    <sect2 id="testing the radios">
+      <title>Testing the radios</title>
+      <para>Start by making the following connections from the radio to an Arduino:
+        <itemizedlist>
+          <listitem>GND to GND</listitem>
+          <listitem>VCC to 5V</listitem>
+          <listitem>INT to pin 7</listitem>
+          <listitem>SEL to pin 10</listitem>
+          <listitem>SCK to pin 13</listitem>
+          <listitem>SDI to pin 11</listitem>
+          <listitem>SDO to pin 12</listitem>
+        </itemizedlist>
+        Then load the examples->JeeLib->RF12->RF12demo sketch. Download this to the Arduino and open the serial monitor. You should see a lot of information presented regarding the options available and the current state of the RFM12. If you don't see this information then double check your connections, serial port speed (57600). If you edited the JeeLib library with the Arduino IDE open you'll need to restart it. 
+       <figure>
+         <title>RF12demo</title>
+         <mediaobject>
+           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/remoteSense/rfm12demo.png"/></imageobject>
+         </mediaobject>
+       </figure>
+      </para>
+
+      <para>Repeat the steps above to connect the second RFM12 to the second Arduino. Once you have got both Arduinos setup with radios and you've checked that the RM12demo sketch works with both, load the examples->JeeLib->RF12->pingpong sketch. Change the <code>RF12_868MHZ</code> to <code>RF12_433MHZ</code> and then upload the sketch onto both Arduinos. Look at the serial monitor, and if all is working you should see this <code>OK 72101108108111330</code> repeated every 3 seconds. This shows the Arduinos are talking to each other over the radio. When this is working, we're most of the way there, so celebrate with your favourite beverage!
+      </para>
+    </sect2>
+    <sect2 id="sender">
+      <title>Building the sender</title>
+      <para>Let's start with the sender. Remove the wires for the RFM12 and plug the H2MDK shield onto the Arduino. Then add the RM12 wires back where they were. It's worth checking that the radio is still working so plug the Arduino in and have a look at the serial monitor. Check that the pingpong sketch is still running as before.
+      </para>
+      <para>Now let's add an LED to tell us when the data is sent, and the temperature sensor. Use the picture below to wire up the components.
+       <figure>
+         <title>LED and Temperature sensor</title>
+         <mediaobject>
+           <imageobject><imagedata scalefit="1" width="100%" fileref="pics/remoteSense/receiver_bb.png"/></imageobject>
+         </mediaobject>
+        </figure>
+        Then load the examples->H2MDK->sender sketch and upload this onto the Arduino. Check the serial monitor. If you have not connected hydrogen to the shield, then you will get lots of errors about the stack voltage being too low. Ignore those and look for information about the temperature and the data being sent every 5 seconds: 
+        <programlisting>
+data ready to send:
+temp C: 19.19
+stack V: 0.00
+stack I: -13.51
+sent</programlisting>
+        You should also notice the LED flashing every 5 seconds as the data is sent. If you are not getting a reading for the temperature, check that you've got the temperature sensor wired up correctly, and that there aren't any error messages about the temperature sensor in the serial monitor.
+      </para>
+      <para>
+      Finally, connect your hydrogen. Check the serial monitor to see that the H2MDK shield is doing it's job:
+      <programlisting>
+1.43V, 0.50A
+1.46V, 0.50A
+1.43V, 0.57A
+1.46V, 0.50A
+data ready to send:
+temp C: 19.25
+stack V: 1.44
+stack I: 0.51
+sent
+</programlisting>
+      Then unplug the USB cable. The status light of the H2MDK shield should be flashing on and off every second, and the sent LED should flash every 5 seconds as data is sent. If all the lights go out when you unplug the USB cable, check the hydrogen is connected properly and that the 2 pin header on the H2MDK board is shorted with a jumper.
+      </para>
+    </sect2>
+    <sect2 id="receiver">
+      <title>Programming the receiver</title> 
+      <para>
+        Load the examples->H2MDK->receiver sketch and upload this onto the other Arduino. Check the serial monitor. You should see the data being received every 5 seconds when the sender's LED flashes.
+        <programlisting>
+receiver start
+rf12 setup done
+got data:
+temp C: 19.19
+stack V: 1.53
+stack I: 0.48
+got data:
+temp C: 19.25
+stack V: 1.50
+stack I: 0.55
+        </programlisting>
+      </para>
+      <para>This concludes the project, and shows the H2MDK working to provide remote power to a wireless sensor module.</para>
+    </sect2>
+</sect1>
+<sect1>
+  <title>Expansion ideas</title>
+  <itemizedlist>
+  <listitem>Add more sensors,</listitem>
+  <listitem>Send a warning when the stack voltage is getting low,</listitem>
+  <listitem>Add an actuator on the sender that can be activated by the receiver.</listitem>
+  </itemizedlist>
+</sect1>
+<sect1>
+
+  <title>Resources</title>
+  <itemizedlist>
+  <listitem><ulink url="http://www.hoperf.com/pro/rf/cob/rfm12.htm">Hope RF product page with datasheet</ulink></listitem>
+  <listitem><ulink url="http://jeelabs.net/projects/cafe/wiki/RF12">JeeLib RF12 documentation</ulink></listitem>
+  <listitem><ulink url="http://datasheets.maxim-ic.com/en/ds/DS18B20.pdf">Maxim DS18B20 datasheet</ulink></listitem>
+  </itemizedlist>
+</sect1>
+
+</article>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>H2MDK 3W Example</title><link rel="stylesheet" type="text/css" href="gtb_docbook.css" /><meta name="generator" content="DocBook XSL Stylesheets V1.76.1" /></head><body><div class="article" title="H2MDK 3W Example"><div class="titlepage"><div><div><h2 class="title"><a id="id2770232"></a>H2MDK 3W Example</h2></div><div><h3 class="subtitle"><em>Remote temperature sensor</em></h3></div></div><hr /></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="sect1"><a href="#overview">Project overview</a></span></dt><dt><span class="sect1"><a href="#what hardware you need">Hardware requirements</a></span></dt><dt><span class="sect1"><a href="#what software you need">Software requirements</a></span></dt><dt><span class="sect1"><a href="#software preparation">Software preparation</a></span></dt><dd><dl><dt><span class="sect2"><a href="#JeeLib">JeeLib library</a></span></dt><dt><span class="sect2"><a href="#H2MDK library">H2MDK library</a></span></dt></dl></dd><dt><span class="sect1"><a href="#hardware preparation">Hardware preparation</a></span></dt><dd><dl><dt><span class="sect2"><a href="#rfm12">RFM12</a></span></dt><dt><span class="sect2"><a href="#testing the radios">Testing the radios</a></span></dt><dt><span class="sect2"><a href="#sender">Building the sender</a></span></dt><dt><span class="sect2"><a href="#receiver">Programming the receiver</a></span></dt></dl></dd><dt><span class="sect1"><a href="#id2771186">Expansion ideas</a></span></dt><dt><span class="sect1"><a href="#id2771208">Resources</a></span></dt></dl></div>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>H2MDK 3W Example</title><link rel="stylesheet" type="text/css" href="gtb_docbook.css" /><meta name="generator" content="DocBook XSL Stylesheets V1.76.1" /></head><body><div class="article" title="H2MDK 3W Example"><div class="titlepage"><div><div><h2 class="title"><a id="id2652109"></a>H2MDK 3W Example</h2></div><div><h3 class="subtitle"><em>Remote temperature sensor</em></h3></div></div><hr /></div><div class="toc"><p><strong>Table of Contents</strong></p><dl><dt><span class="sect1"><a href="#overview">Project overview</a></span></dt><dt><span class="sect1"><a href="#what hardware you need">Hardware requirements</a></span></dt><dt><span class="sect1"><a href="#what software you need">Software requirements</a></span></dt><dt><span class="sect1"><a href="#software preparation">Software preparation</a></span></dt><dd><dl><dt><span class="sect2"><a href="#JeeLib">JeeLib library</a></span></dt><dt><span class="sect2"><a href="#H2MDK library">H2MDK library</a></span></dt></dl></dd><dt><span class="sect1"><a href="#hardware preparation">Hardware preparation</a></span></dt><dd><dl><dt><span class="sect2"><a href="#rfm12">RFM12</a></span></dt><dt><span class="sect2"><a href="#testing the radios">Testing the radios</a></span></dt><dt><span class="sect2"><a href="#sender">Building the sender</a></span></dt><dt><span class="sect2"><a href="#receiver">Programming the receiver</a></span></dt></dl></dd><dt><span class="sect1"><a href="#id2653000">Expansion ideas</a></span></dt><dt><span class="sect1"><a href="#id2653022">Resources</a></span></dt></dl></div>
 
   
 
@@ -60,7 +60,7 @@
     <div class="sect2" title="RFM12"><div class="titlepage"><div><div><h3 class="title"><a id="rfm12"></a>RFM12</h3></div></div></div>
       
       <p>There are quite a few RFM12 radio module options. There are 315MHZ, 433MHz, 868MHz and 915MHz versions. We're using the 433MHz version. The others may work but haven't been tested in this application. Also, there are mounting differences: some with pins, some without. Either way, we need to be able to plug these into a breadboard. So if you feel happy soldering the 2mm pitch pins then solder some wires onto the following pins: GND, INT, SDO, SCK, SEL, SDI and VCC. Alternatively, you can buy an RFM12 on a breakout board from a number of suppliers, including <a class="ulink" href="http://jeelabs.com/products/rfm12b-board" target="_top">JeeLib (includes the RFM12)</a> or <a class="ulink" href="http://lab.robomotic.com/shop?page=shop.product_details&amp;flypage=flypage-ask.tpl&amp;product_id=17&amp;category_id=1" target="_top">Robotmotic's breakout board (requires the pinless version of the RFM12)</a>. Finally, if you want to make your own breakout board, here are the <a class="ulink" href="https://github.com/mattvenn/eagle-circuit-designs/tree/master/hope%20rm12b%20bob" target="_top">Eagle schematics for a breakout board (requires the pinned version of the RFM12)</a>.
-       </p><div class="figure"><a id="id2770676"></a><p class="title"><strong>Figure 1. RFM12 connections</strong></p><div class="figure-contents">
+       </p><div class="figure"><a id="id2652560"></a><p class="title"><strong>Figure 1. RFM12 connections</strong></p><div class="figure-contents">
          
          <div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="100%"><tr><td><img src="pics/remoteSense/rfm12connections.JPG" width="100%" alt="RFM12 connections" /></td></tr></table></div>
        </div></div><p><br class="figure-break" />
@@ -72,7 +72,7 @@
       <p>Start by making the following connections from the radio to an Arduino:
         </p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">GND to GND</li><li class="listitem">VCC to 5V</li><li class="listitem">INT to pin 7</li><li class="listitem">SEL to pin 10</li><li class="listitem">SCK to pin 13</li><li class="listitem">SDI to pin 11</li><li class="listitem">SDO to pin 12</li></ul></div><p>
         Then load the examples-&gt;JeeLib-&gt;RF12-&gt;RF12demo sketch. Download this to the Arduino and open the serial monitor. You should see a lot of information presented regarding the options available and the current state of the RFM12. If you don't see this information then double check your connections, serial port speed (57600). If you edited the JeeLib library with the Arduino IDE open you'll need to restart it. 
-       </p><div class="figure"><a id="id2770763"></a><p class="title"><strong>Figure 2. RF12demo</strong></p><div class="figure-contents">
+       </p><div class="figure"><a id="id2652826"></a><p class="title"><strong>Figure 2. RF12demo</strong></p><div class="figure-contents">
          
          <div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="100%"><tr><td><img src="pics/remoteSense/rfm12demo.png" width="100%" alt="RF12demo" /></td></tr></table></div>
        </div></div><p><br class="figure-break" />
@@ -86,7 +86,7 @@
       <p>Let's start with the sender. Remove the wires for the RFM12 and plug the H2MDK shield onto the Arduino. Then add the RM12 wires back where they were. It's worth checking that the radio is still working so plug the Arduino in and have a look at the serial monitor. Check that the pingpong sketch is still running as before.
       </p>
       <p>Now let's add an LED to tell us when the data is sent, and the temperature sensor. Use the picture below to wire up the components.
-       </p><div class="figure"><a id="id2771099"></a><p class="title"><strong>Figure 3. LED and Temperature sensor</strong></p><div class="figure-contents">
+       </p><div class="figure"><a id="id2652892"></a><p class="title"><strong>Figure 3. LED and Temperature sensor</strong></p><div class="figure-contents">
          
          <div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="100%"><tr><td><img src="pics/remoteSense/receiver_bb.png" width="100%" alt="LED and Temperature sensor" /></td></tr></table></div>
         </div></div><p><br class="figure-break" />
@@ -113,6 +113,10 @@ stack I: 0.51
 sent
 </pre><p>
       Then unplug the USB cable. The status light of the H2MDK shield should be flashing on and off every second, and the sent LED should flash every 5 seconds as data is sent. If all the lights go out when you unplug the USB cable, check the hydrogen is connected properly and that the 2 pin header on the H2MDK board is shorted with a jumper.
+       </p><div class="figure"><a id="id2652949"></a><p class="title"><strong>Figure 4. Sender</strong></p><div class="figure-contents">
+         
+         <div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" cellspacing="0" cellpadding="0" width="100%"><tr><td><img src="pics/remoteSense/sender.jpg" width="100%" alt="Sender" /></td></tr></table></div>
+       </div></div><p><br class="figure-break" />
       </p>
     </div>
     <div class="sect2" title="Programming the receiver"><div class="titlepage"><div><div><h3 class="title"><a id="receiver"></a>Programming the receiver</h3></div></div></div>
@@ -135,11 +139,11 @@ stack I: 0.55
       <p>This concludes the project, and shows the H2MDK working to provide remote power to a wireless sensor module.</p>
     </div>
 </div>
-<div class="sect1" title="Expansion ideas"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id2771186"></a>Expansion ideas</h2></div></div></div>
+<div class="sect1" title="Expansion ideas"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id2653000"></a>Expansion ideas</h2></div></div></div>
   
   <div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">Add more sensors,</li><li class="listitem">Send a warning when the stack voltage is getting low,</li><li class="listitem">Add an actuator on the sender that can be activated by the receiver.</li></ul></div>
 </div>
-<div class="sect1" title="Resources"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id2771208"></a>Resources</h2></div></div></div>
+<div class="sect1" title="Resources"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id2653022"></a>Resources</h2></div></div></div>
 
   
   <div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><a class="ulink" href="http://www.hoperf.com/pro/rf/cob/rfm12.htm" target="_top">Hope RF product page with datasheet</a></li><li class="listitem"><a class="ulink" href="http://jeelabs.net/projects/cafe/wiki/RF12" target="_top">JeeLib RF12 documentation</a></li><li class="listitem"><a class="ulink" href="http://datasheets.maxim-ic.com/en/ds/DS18B20.pdf" target="_top">Maxim DS18B20 datasheet</a></li></ul></div>
